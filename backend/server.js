@@ -1,4 +1,5 @@
 const express = require("express");
+const authMiddleware = require("./middleware/authMiddleware");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
@@ -15,6 +16,10 @@ app.use(cookieParser());
 
 app.get("/", (req, res) => {
   res.send("GigFlow Backend Running");
+});
+
+app.get("/api/protected", authMiddleware, (req, res) => {
+  res.json({ message: "Protected route accessed" });
 });
 
 const authRoutes = require("./routes/authRoutes");

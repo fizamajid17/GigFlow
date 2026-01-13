@@ -1,14 +1,13 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<h1>GigFlow Home</h1>} />
-        <Route path="/login" element={<h1>Login Page</h1>} />
-        <Route path="/register" element={<h1>Register Page</h1>} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <h1>GigFlow</h1>
+      <Register />
+      <Login />
+    </>
   );
 }
 
